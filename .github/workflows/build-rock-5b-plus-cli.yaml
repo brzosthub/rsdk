@@ -1,0 +1,24 @@
+name: Build ROCK 5B+ CLI
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-rock-5b-plus-cli:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Build ROCK 5B+ CLI
+        uses: ./.github/actions/build
+        with:
+          product: rock-5b-plus
+          suite: bookworm
+          edition: cli
+          test-repo: true
+          artifacts: true
+
