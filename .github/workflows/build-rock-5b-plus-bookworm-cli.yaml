@@ -1,4 +1,4 @@
-name: Build ROCK 5B+ CLI
+name: Build ROCK 5B+ Bookworm CLI
 
 on:
   workflow_dispatch:
@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-      - name: Build ROCK 5B+ CLI
+      - name: Build ROCK 5B+ Bookworm CLI
         uses: ./.github/actions/build
         with:
           product: rock-5b-plus
